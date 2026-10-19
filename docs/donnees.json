@@ -1,5 +1,5 @@
 {
- "genere": "2026-10-18T05:52:47.454226-04:00",
+ "genere": "2026-10-19T06:04:11.287444-04:00",
  "villes": {
   "Québec": [
    {
@@ -8,43 +8,43 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=48.55,-71.65",
     "actuel": {
-     "temp": 2.8,
+     "temp": 8.9,
      "conditions": null,
-     "humidite": 79,
+     "humidite": 69,
      "vent": null,
      "station": "Mistook"
     },
     "jour": {
      "nom": "Aujourd'hui",
-     "conditions": "Alternance de soleil et de nuages",
-     "icone": "https://weather.gc.ca/weathericons/02.gif",
-     "code": 2,
-     "max": 10,
+     "conditions": "Généralement ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/01.gif",
+     "code": 1,
+     "max": 16,
      "min": null,
      "pop": null,
-     "vent": "Vents devenant du sud à 20 km/h avec rafales à 40 en mi-journée.",
-     "uv": "Indice UV de 2 ou bas.",
-     "texte": "Généralement nuageux. Dégagement tôt cet après-midi. Vents devenant du sud à 20 km/h avec rafales à 40 en mi-journée. Maximum 10. Indice UV de 2 ou bas."
+     "vent": "Vents du sud-ouest de 20 km/h avec rafales à 40.",
+     "uv": "Indice UV de 3 ou modéré.",
+     "texte": "Généralement ensoleillé. Vents du sud-ouest de 20 km/h avec rafales à 40. Maximum 16. Indice UV de 3 ou modéré."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
-     "conditions": "Quelques nuages",
-     "icone": "https://weather.gc.ca/weathericons/31.gif",
-     "code": 31,
+     "conditions": "Partiellement nuageux",
+     "icone": "https://weather.gc.ca/weathericons/32.gif",
+     "code": 32,
      "max": null,
-     "min": 7,
+     "min": 3,
      "pop": null,
-     "vent": "Vents du sud-ouest de 20 km/h avec rafales à 40.",
+     "vent": "Vents du nord-ouest de 20 km/h.",
      "uv": null,
-     "texte": "Quelques nuages. Vents du sud-ouest de 20 km/h avec rafales à 40. Minimum 7."
+     "texte": "Partiellement nuageux. Vents du nord-ouest de 20 km/h. Minimum plus 3."
     },
     "normales": {
      "max": 8,
      "min": 0
     },
     "alertes": [],
-    "lever": "07:11",
-    "coucher": "17:52",
+    "lever": "07:12",
+    "coucher": "17:50",
     "emis": "05:00"
    },
    {
@@ -53,43 +53,43 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=49.22,-68.15",
     "actuel": {
-     "temp": -1.9,
+     "temp": 0.6,
      "conditions": "Dégagé",
-     "humidite": 82,
-     "vent": "ONO 15 km/h (rafales 28)",
+     "humidite": 100,
+     "vent": "O 4 km/h (rafales 32)",
      "station": "Aéroport de Baie-Comeau"
     },
     "jour": {
      "nom": "Aujourd'hui",
-     "conditions": "Alternance de soleil et de nuages",
-     "icone": "https://weather.gc.ca/weathericons/02.gif",
-     "code": 2,
-     "max": 5,
+     "conditions": "Généralement ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/01.gif",
+     "code": 1,
+     "max": 11,
      "min": null,
      "pop": null,
-     "vent": "Vents d'ouest de 20 km/h avec rafales à 40.",
-     "uv": "Indice UV de 2 ou bas.",
-     "texte": "Généralement ensoleillé. Ennuagement tard ce matin. Vents d'ouest de 20 km/h avec rafales à 40. Maximum plus 5. Refroidissement éolien moins 10 ce matin. Indice UV de 2 ou bas."
+     "vent": "Vents du sud-ouest de 30 km/h avec rafales à 50.",
+     "uv": "Indice UV de 3 ou modéré.",
+     "texte": "Généralement ensoleillé. Vents du sud-ouest de 30 km/h avec rafales à 50. Maximum 11. Indice UV de 3 ou modéré."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
-     "conditions": "Partiellement nuageux",
-     "icone": "https://weather.gc.ca/weathericons/32.gif",
-     "code": 32,
+     "conditions": "Quelques nuages",
+     "icone": "https://weather.gc.ca/weathericons/31.gif",
+     "code": 31,
      "max": null,
-     "min": 2,
+     "min": 4,
      "pop": null,
-     "vent": null,
+     "vent": "Vents du sud-ouest de 20 km/h devenant légers tard ce soir.",
      "uv": null,
-     "texte": "Dégagement. Minimum plus 2."
+     "texte": "Quelques nuages. Vents du sud-ouest de 20 km/h devenant légers tard ce soir. Minimum plus 4."
     },
     "normales": {
      "max": 7,
      "min": -1
     },
     "alertes": [],
-    "lever": "06:58",
-    "coucher": "17:37",
+    "lever": "06:59",
+    "coucher": "17:35",
     "emis": "05:00"
    },
    {
@@ -98,10 +98,10 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=48.35,-64.68",
     "actuel": {
-     "temp": -0.6,
+     "temp": 7.3,
      "conditions": null,
-     "humidite": 71,
-     "vent": "OSO 14 km/h (rafales 35)",
+     "humidite": 74,
+     "vent": "SO 32 km/h (rafales 45)",
      "station": "Cap-d'Espoir"
     },
     "jour": {
@@ -109,288 +109,12 @@
      "conditions": "Ensoleillé",
      "icone": "https://weather.gc.ca/weathericons/00.gif",
      "code": 0,
-     "max": 7,
-     "min": null,
-     "pop": null,
-     "vent": "Vents d'ouest de 20 km/h avec rafales à 40 devenant légers en mi-journée.",
-     "uv": "Indice UV de 2 ou bas.",
-     "texte": "Ensoleillé. Vents d'ouest de 20 km/h avec rafales à 40 devenant légers en mi-journée. Maximum 7. Refroidissement éolien moins 9 ce matin. Indice UV de 2 ou bas."
-    },
-    "nuit": {
-     "nom": "Ce soir et cette nuit",
-     "conditions": "Quelques nuages",
-     "icone": "https://weather.gc.ca/weathericons/31.gif",
-     "code": 31,
-     "max": null,
-     "min": 2,
-     "pop": null,
-     "vent": "Vents devenant du sud à 20 km/h avec rafales à 40 après minuit.",
-     "uv": null,
-     "texte": "Quelques nuages. Vents devenant du sud à 20 km/h avec rafales à 40 après minuit. Minimum plus 2."
-    },
-    "normales": {
-     "max": 10,
-     "min": 1
-    },
-    "alertes": [],
-    "lever": "06:43",
-    "coucher": "17:24",
-    "emis": "05:00"
-   },
-   {
-    "id": "qc-64",
-    "nom": "Dolbeau-Mistassini",
-    "ok": true,
-    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=48.88,-72.23",
-    "actuel": {
-     "temp": 0.4,
-     "conditions": null,
-     "humidite": 90,
-     "vent": "ONO 4 km/h (rafales 42)",
-     "station": "Normandin"
-    },
-    "jour": {
-     "nom": "Aujourd'hui",
-     "conditions": "Alternance de soleil et de nuages",
-     "icone": "https://weather.gc.ca/weathericons/02.gif",
-     "code": 2,
-     "max": 10,
-     "min": null,
-     "pop": null,
-     "vent": "Vents devenant du sud à 20 km/h avec rafales à 40 en mi-journée.",
-     "uv": "Indice UV de 2 ou bas.",
-     "texte": "Généralement nuageux. Dégagement tôt cet après-midi. Vents devenant du sud à 20 km/h avec rafales à 40 en mi-journée. Maximum 10. Indice UV de 2 ou bas."
-    },
-    "nuit": {
-     "nom": "Ce soir et cette nuit",
-     "conditions": "Quelques nuages",
-     "icone": "https://weather.gc.ca/weathericons/31.gif",
-     "code": 31,
-     "max": null,
-     "min": 7,
-     "pop": null,
-     "vent": "Vents du sud-ouest de 20 km/h avec rafales à 40.",
-     "uv": null,
-     "texte": "Quelques nuages. Vents du sud-ouest de 20 km/h avec rafales à 40. Minimum 7."
-    },
-    "normales": {
-     "max": 8,
-     "min": 0
-    },
-    "alertes": [],
-    "lever": "07:14",
-    "coucher": "17:54",
-    "emis": "05:00"
-   },
-   {
-    "id": "qc-2",
-    "nom": "Drummondville",
-    "ok": true,
-    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=45.88,-72.48",
-    "actuel": {
-     "temp": 0.5,
-     "conditions": null,
-     "humidite": 77,
-     "vent": "SSO 7 km/h (rafales 32)",
-     "station": "Saint-Germain-de-Grantham"
-    },
-    "jour": {
-     "nom": "Aujourd'hui",
-     "conditions": "Alternance de soleil et de nuages",
-     "icone": "https://weather.gc.ca/weathericons/02.gif",
-     "code": 2,
-     "max": 13,
-     "min": null,
-     "pop": null,
-     "vent": "Vents devenant du sud-ouest à 20 km/h en mi-journée.",
-     "uv": "Indice UV de 3 ou modéré.",
-     "texte": "Alternance de soleil et de nuages. Dégagement cet après-midi. Vents devenant du sud-ouest à 20 km/h en mi-journée. Maximum 13. Refroidissement éolien moins 7 ce matin. Indice UV de 3 ou modéré."
-    },
-    "nuit": {
-     "nom": "Ce soir et cette nuit",
-     "conditions": "Dégagé",
-     "icone": "https://weather.gc.ca/weathericons/30.gif",
-     "code": 30,
-     "max": null,
-     "min": 7,
-     "pop": null,
-     "vent": "Vents du sud-ouest de 20 km/h.",
-     "uv": null,
-     "texte": "Dégagé. Vents du sud-ouest de 20 km/h. Minimum 7."
-    },
-    "normales": {
-     "max": 11,
-     "min": 2
-    },
-    "alertes": [
-     {
-      "titre": "AVIS JAUNE - GEL",
-      "niveau": "yellow",
-      "lien": "https://meteo.gc.ca/warnings/report_f.html?qcrm65#1438078652067495195202610160504"
-     }
-    ],
-    "lever": "07:10",
-    "coucher": "17:59",
-    "emis": "05:00"
-   },
-   {
-    "id": "qc-126",
-    "nom": "Gatineau",
-    "ok": true,
-    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=45.49,-75.66",
-    "actuel": {
-     "temp": -1.3,
-     "conditions": "Dégagé",
-     "humidite": 88,
-     "vent": "NNE 4 km/h (rafales 38)",
-     "station": "Aéroport de Gatineau"
-    },
-    "jour": {
-     "nom": "Aujourd'hui",
-     "conditions": "Généralement ensoleillé",
-     "icone": "https://weather.gc.ca/weathericons/01.gif",
-     "code": 1,
-     "max": 14,
-     "min": null,
-     "pop": null,
-     "vent": "Vents devenant du sud-ouest à 20 km/h avec rafales à 40 tard ce matin.",
-     "uv": "Indice UV de 3 ou modéré.",
-     "texte": "Dégagement. Vents devenant du sud-ouest à 20 km/h avec rafales à 40 tard ce matin. Maximum 14. Indice UV de 3 ou modéré."
-    },
-    "nuit": {
-     "nom": "Ce soir et cette nuit",
-     "conditions": "Dégagé",
-     "icone": "https://weather.gc.ca/weathericons/30.gif",
-     "code": 30,
-     "max": null,
-     "min": 3,
-     "pop": null,
-     "vent": "Vents du sud-ouest de 20 km/h avec rafales à 40 devenant légers vers minuit.",
-     "uv": null,
-     "texte": "Dégagé. Vents du sud-ouest de 20 km/h avec rafales à 40 devenant légers vers minuit. Minimum plus 3."
-    },
-    "normales": {
-     "max": 11,
-     "min": 2
-    },
-    "alertes": [],
-    "lever": "07:23",
-    "coucher": "18:12",
-    "emis": "05:00"
-   },
-   {
-    "id": "qc-47",
-    "nom": "Mont-Laurier",
-    "ok": true,
-    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=46.55,-75.5",
-    "actuel": {
-     "temp": -0.1,
-     "conditions": null,
-     "humidite": 82,
-     "vent": "S 3 km/h (rafales 29)",
-     "station": "Aéroport de Maniwaki"
-    },
-    "jour": {
-     "nom": "Aujourd'hui",
-     "conditions": "Ensoleillé",
-     "icone": "https://weather.gc.ca/weathericons/00.gif",
-     "code": 0,
-     "max": 11,
-     "min": null,
-     "pop": null,
-     "vent": "Vents devenant du sud-ouest à 20 km/h en mi-journée.",
-     "uv": "Indice UV de 3 ou modéré.",
-     "texte": "Dégagement tôt ce matin. Vents devenant du sud-ouest à 20 km/h en mi-journée. Maximum 11. Refroidissement éolien moins 6 ce matin. Indice UV de 3 ou modéré."
-    },
-    "nuit": {
-     "nom": "Ce soir et cette nuit",
-     "conditions": "Dégagé",
-     "icone": "https://weather.gc.ca/weathericons/30.gif",
-     "code": 30,
-     "max": null,
-     "min": 4,
-     "pop": null,
-     "vent": "Vents du sud-ouest de 20 km/h devenant légers ce soir.",
-     "uv": null,
-     "texte": "Dégagé. Vents du sud-ouest de 20 km/h devenant légers ce soir. Minimum plus 4."
-    },
-    "normales": {
-     "max": 9,
-     "min": 0
-    },
-    "alertes": [],
-    "lever": "07:23",
-    "coucher": "18:10",
-    "emis": "05:00"
-   },
-   {
-    "id": "qc-147",
-    "nom": "Montréal",
-    "ok": true,
-    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=45.51,-73.55",
-    "actuel": {
-     "temp": 4.1,
-     "conditions": "Généralement nuageux",
-     "humidite": 69,
-     "vent": "O 4 km/h (rafales 35)",
-     "station": "Aéroport int. Montréal-Trudeau"
-    },
-    "jour": {
-     "nom": "Aujourd'hui",
-     "conditions": "Généralement ensoleillé",
-     "icone": "https://weather.gc.ca/weathericons/01.gif",
-     "code": 1,
-     "max": 14,
-     "min": null,
-     "pop": null,
-     "vent": "Vents devenant du sud-ouest à 20 km/h en mi-journée.",
-     "uv": "Indice UV de 3 ou modéré.",
-     "texte": "Dégagement. Vents devenant du sud-ouest à 20 km/h en mi-journée. Maximum 14. Indice UV de 3 ou modéré."
-    },
-    "nuit": {
-     "nom": "Ce soir et cette nuit",
-     "conditions": "Dégagé",
-     "icone": "https://weather.gc.ca/weathericons/30.gif",
-     "code": 30,
-     "max": null,
-     "min": 8,
-     "pop": null,
-     "vent": "Vents du sud-ouest de 20 km/h.",
-     "uv": null,
-     "texte": "Dégagé. Vents du sud-ouest de 20 km/h. Minimum 8."
-    },
-    "normales": {
      "max": 12,
-     "min": 2
-    },
-    "alertes": [],
-    "lever": "07:14",
-    "coucher": "18:04",
-    "emis": "05:00"
-   },
-   {
-    "id": "qc-133",
-    "nom": "Québec",
-    "ok": true,
-    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=46.81,-71.21",
-    "actuel": {
-     "temp": -0.1,
-     "conditions": "Généralement nuageux",
-     "humidite": 79,
-     "vent": "OSO 13 km/h (rafales 35)",
-     "station": "Aéroport int. Lesage de Québec"
-    },
-    "jour": {
-     "nom": "Aujourd'hui",
-     "conditions": "Alternance de soleil et de nuages",
-     "icone": "https://weather.gc.ca/weathericons/02.gif",
-     "code": 2,
-     "max": 8,
      "min": null,
      "pop": null,
-     "vent": "Vents jusqu'à 15 km/h.",
+     "vent": "Vents du sud-ouest de 30 km/h avec rafales à 50.",
      "uv": "Indice UV de 3 ou modéré.",
-     "texte": "Alternance de soleil et de nuages. Vents jusqu'à 15 km/h. Maximum 8. Refroidissement éolien moins 9 ce matin. Indice UV de 3 ou modéré."
+     "texte": "Ensoleillé. Vents du sud-ouest de 30 km/h avec rafales à 50. Maximum 12. Indice UV de 3 ou modéré."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
@@ -405,12 +129,282 @@
      "texte": "Quelques nuages. Minimum plus 3."
     },
     "normales": {
+     "max": 9,
+     "min": 1
+    },
+    "alertes": [],
+    "lever": "06:44",
+    "coucher": "17:23",
+    "emis": "05:00"
+   },
+   {
+    "id": "qc-64",
+    "nom": "Dolbeau-Mistassini",
+    "ok": true,
+    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=48.88,-72.23",
+    "actuel": {
+     "temp": 6.9,
+     "conditions": null,
+     "humidite": 72,
+     "vent": "S 15 km/h (rafales 28)",
+     "station": "Normandin"
+    },
+    "jour": {
+     "nom": "Aujourd'hui",
+     "conditions": "Généralement ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/01.gif",
+     "code": 1,
+     "max": 16,
+     "min": null,
+     "pop": null,
+     "vent": "Vents du sud-ouest de 20 km/h avec rafales à 40.",
+     "uv": "Indice UV de 3 ou modéré.",
+     "texte": "Généralement ensoleillé. Vents du sud-ouest de 20 km/h avec rafales à 40. Maximum 16. Indice UV de 3 ou modéré."
+    },
+    "nuit": {
+     "nom": "Ce soir et cette nuit",
+     "conditions": "Partiellement nuageux",
+     "icone": "https://weather.gc.ca/weathericons/32.gif",
+     "code": 32,
+     "max": null,
+     "min": 3,
+     "pop": null,
+     "vent": "Vents du nord-ouest de 20 km/h.",
+     "uv": null,
+     "texte": "Partiellement nuageux. Vents du nord-ouest de 20 km/h. Minimum plus 3."
+    },
+    "normales": {
+     "max": 8,
+     "min": 0
+    },
+    "alertes": [],
+    "lever": "07:15",
+    "coucher": "17:52",
+    "emis": "05:00"
+   },
+   {
+    "id": "qc-2",
+    "nom": "Drummondville",
+    "ok": true,
+    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=45.88,-72.48",
+    "actuel": {
+     "temp": 6.7,
+     "conditions": null,
+     "humidite": 64,
+     "vent": "S 12 km/h (rafales 27)",
+     "station": "Saint-Germain-de-Grantham"
+    },
+    "jour": {
+     "nom": "Aujourd'hui",
+     "conditions": "Ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/00.gif",
+     "code": 0,
+     "max": 17,
+     "min": null,
+     "pop": null,
+     "vent": "Vents devenant du sud-ouest à 20 km/h ce matin.",
+     "uv": "Indice UV de 3 ou modéré.",
+     "texte": "Ensoleillé. Vents devenant du sud-ouest à 20 km/h ce matin. Maximum 17. Indice UV de 3 ou modéré."
+    },
+    "nuit": {
+     "nom": "Ce soir et cette nuit",
+     "conditions": "Dégagé",
+     "icone": "https://weather.gc.ca/weathericons/30.gif",
+     "code": 30,
+     "max": null,
+     "min": 5,
+     "pop": null,
+     "vent": null,
+     "uv": null,
+     "texte": "Dégagé. Nappes de brouillard se formant au cours de la nuit. Minimum plus 5."
+    },
+    "normales": {
      "max": 10,
      "min": 2
     },
     "alertes": [],
-    "lever": "07:07",
-    "coucher": "17:53",
+    "lever": "07:12",
+    "coucher": "17:57",
+    "emis": "05:00"
+   },
+   {
+    "id": "qc-126",
+    "nom": "Gatineau",
+    "ok": true,
+    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=45.49,-75.66",
+    "actuel": {
+     "temp": 1.1,
+     "conditions": "Dégagé",
+     "humidite": 94,
+     "vent": "E calme km/h (rafales 30)",
+     "station": "Aéroport de Gatineau"
+    },
+    "jour": {
+     "nom": "Aujourd'hui",
+     "conditions": "Ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/00.gif",
+     "code": 0,
+     "max": 18,
+     "min": null,
+     "pop": null,
+     "vent": null,
+     "uv": "Indice UV de 3 ou modéré.",
+     "texte": "Ensoleillé. Maximum 18. Indice UV de 3 ou modéré."
+    },
+    "nuit": {
+     "nom": "Ce soir et cette nuit",
+     "conditions": "Dégagé",
+     "icone": "https://weather.gc.ca/weathericons/30.gif",
+     "code": 30,
+     "max": null,
+     "min": 3,
+     "pop": null,
+     "vent": null,
+     "uv": null,
+     "texte": "Dégagé. Minimum plus 3."
+    },
+    "normales": {
+     "max": 11,
+     "min": 2
+    },
+    "alertes": [],
+    "lever": "07:24",
+    "coucher": "18:11",
+    "emis": "05:00"
+   },
+   {
+    "id": "qc-47",
+    "nom": "Mont-Laurier",
+    "ok": true,
+    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=46.55,-75.5",
+    "actuel": {
+     "temp": 5.7,
+     "conditions": null,
+     "humidite": 85,
+     "vent": "SSE 6 km/h (rafales 35)",
+     "station": "Aéroport de Maniwaki"
+    },
+    "jour": {
+     "nom": "Aujourd'hui",
+     "conditions": "Généralement ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/01.gif",
+     "code": 1,
+     "max": 15,
+     "min": null,
+     "pop": null,
+     "vent": "Vents devenant du sud-ouest à 20 km/h ce matin.",
+     "uv": "Indice UV de 3 ou modéré.",
+     "texte": "Généralement ensoleillé. Vents devenant du sud-ouest à 20 km/h ce matin. Maximum 15. Indice UV de 3 ou modéré."
+    },
+    "nuit": {
+     "nom": "Ce soir et cette nuit",
+     "conditions": "Dégagé",
+     "icone": "https://weather.gc.ca/weathericons/30.gif",
+     "code": 30,
+     "max": null,
+     "min": 3,
+     "pop": null,
+     "vent": null,
+     "uv": null,
+     "texte": "Dégagé. Nappes de brouillard se formant au cours de la nuit. Minimum plus 3."
+    },
+    "normales": {
+     "max": 9,
+     "min": 0
+    },
+    "alertes": [],
+    "lever": "07:25",
+    "coucher": "18:09",
+    "emis": "05:00"
+   },
+   {
+    "id": "qc-147",
+    "nom": "Montréal",
+    "ok": true,
+    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=45.51,-73.55",
+    "actuel": {
+     "temp": 6.1,
+     "conditions": "Dégagé",
+     "humidite": 80,
+     "vent": "SE 4 km/h (rafales 35)",
+     "station": "Aéroport int. Montréal-Trudeau"
+    },
+    "jour": {
+     "nom": "Aujourd'hui",
+     "conditions": "Ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/00.gif",
+     "code": 0,
+     "max": 17,
+     "min": null,
+     "pop": null,
+     "vent": "Vents devenant du sud-ouest à 20 km/h ce matin.",
+     "uv": "Indice UV de 3 ou modéré.",
+     "texte": "Ensoleillé. Vents devenant du sud-ouest à 20 km/h ce matin. Maximum 17. Indice UV de 3 ou modéré."
+    },
+    "nuit": {
+     "nom": "Ce soir et cette nuit",
+     "conditions": "Dégagé",
+     "icone": "https://weather.gc.ca/weathericons/30.gif",
+     "code": 30,
+     "max": null,
+     "min": 6,
+     "pop": null,
+     "vent": null,
+     "uv": null,
+     "texte": "Dégagé. Minimum 6."
+    },
+    "normales": {
+     "max": 11,
+     "min": 2
+    },
+    "alertes": [],
+    "lever": "07:16",
+    "coucher": "18:02",
+    "emis": "05:00"
+   },
+   {
+    "id": "qc-133",
+    "nom": "Québec",
+    "ok": true,
+    "lien": "https://meteo.gc.ca/fr/location/index.html?coords=46.81,-71.21",
+    "actuel": {
+     "temp": -0.2,
+     "conditions": "Généralement dégagé",
+     "humidite": 95,
+     "vent": "NNE 3 km/h (rafales 35)",
+     "station": "Aéroport int. Lesage de Québec"
+    },
+    "jour": {
+     "nom": "Aujourd'hui",
+     "conditions": "Ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/00.gif",
+     "code": 0,
+     "max": 15,
+     "min": null,
+     "pop": null,
+     "vent": "Vents du sud-ouest de 20 km/h.",
+     "uv": "Indice UV de 3 ou modéré.",
+     "texte": "Ensoleillé. Vents du sud-ouest de 20 km/h. Maximum 15. Indice UV de 3 ou modéré."
+    },
+    "nuit": {
+     "nom": "Ce soir et cette nuit",
+     "conditions": "Dégagé",
+     "icone": "https://weather.gc.ca/weathericons/30.gif",
+     "code": 30,
+     "max": null,
+     "min": 2,
+     "pop": null,
+     "vent": null,
+     "uv": null,
+     "texte": "Dégagé. Nappes de brouillard se formant au cours de la nuit. Minimum plus 2 avec risque de gel."
+    },
+    "normales": {
+     "max": 9,
+     "min": 1
+    },
+    "alertes": [],
+    "lever": "07:08",
+    "coucher": "17:51",
     "emis": "05:00"
    },
    {
@@ -419,10 +413,10 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=48.45,-68.53",
     "actuel": {
-     "temp": 0.7,
+     "temp": 7.1,
      "conditions": null,
-     "humidite": 87,
-     "vent": "OSO 16 km/h (rafales 27)",
+     "humidite": 65,
+     "vent": "SSO 21 km/h (rafales 36)",
      "station": "Pointe-au-Père"
     },
     "jour": {
@@ -430,12 +424,12 @@
      "conditions": "Généralement ensoleillé",
      "icone": "https://weather.gc.ca/weathericons/01.gif",
      "code": 1,
-     "max": 6,
+     "max": 13,
      "min": null,
      "pop": null,
-     "vent": "Vents du sud-ouest de 20 km/h devenant légers cet après-midi.",
-     "uv": "Indice UV de 2 ou bas.",
-     "texte": "Généralement ensoleillé. Vents du sud-ouest de 20 km/h devenant légers cet après-midi. Maximum 6. Indice UV de 2 ou bas."
+     "vent": "Vents du sud-ouest de 30 km/h avec rafales à 50.",
+     "uv": "Indice UV de 3 ou modéré.",
+     "texte": "Généralement ensoleillé. Vents du sud-ouest de 30 km/h avec rafales à 50. Maximum 13. Indice UV de 3 ou modéré."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
@@ -443,19 +437,19 @@
      "icone": "https://weather.gc.ca/weathericons/31.gif",
      "code": 31,
      "max": null,
-     "min": 4,
+     "min": 6,
      "pop": null,
-     "vent": "Vents du sud de 20 km/h avec rafales à 40.",
+     "vent": "Vents du sud-ouest de 20 km/h.",
      "uv": null,
-     "texte": "Dégagement. Vents du sud de 20 km/h avec rafales à 40. Minimum plus 4."
+     "texte": "Quelques nuages. Vents du sud-ouest de 20 km/h. Minimum 6."
     },
     "normales": {
      "max": 8,
      "min": 1
     },
     "alertes": [],
-    "lever": "06:58",
-    "coucher": "17:40",
+    "lever": "07:00",
+    "coucher": "17:38",
     "emis": "05:00"
    },
    {
@@ -464,23 +458,23 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=48.24,-79.02",
     "actuel": {
-     "temp": -0.2,
+     "temp": 8.1,
      "conditions": "Dégagé",
-     "humidite": 100,
-     "vent": "SSO 5 km/h (rafales 30)",
+     "humidite": 76,
+     "vent": "SO 22 km/h (rafales 35)",
      "station": "Aéroport de Rouyn"
     },
     "jour": {
      "nom": "Aujourd'hui",
-     "conditions": "Ensoleillé",
-     "icone": "https://weather.gc.ca/weathericons/00.gif",
-     "code": 0,
-     "max": 14,
+     "conditions": "Généralement ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/01.gif",
+     "code": 1,
+     "max": 16,
      "min": null,
      "pop": null,
-     "vent": "Vents devenant du sud-ouest à 30 km/h avec rafales à 50 ce matin.",
+     "vent": "Vents du sud-ouest de 20 km/h avec rafales à 40.",
      "uv": "Indice UV de 3 ou modéré.",
-     "texte": "Ensoleillé. Vents devenant du sud-ouest à 30 km/h avec rafales à 50 ce matin. Maximum 14. Indice UV de 3 ou modéré."
+     "texte": "Généralement ensoleillé. Vents du sud-ouest de 20 km/h avec rafales à 40. Maximum 16. Indice UV de 3 ou modéré."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
@@ -488,19 +482,19 @@
      "icone": "https://weather.gc.ca/weathericons/30.gif",
      "code": 30,
      "max": null,
-     "min": 7,
+     "min": 0,
      "pop": null,
-     "vent": "Vents du sud-ouest de 30 km/h avec rafales à 50.",
+     "vent": null,
      "uv": null,
-     "texte": "Dégagé. Vents du sud-ouest de 30 km/h avec rafales à 50. Minimum 7."
+     "texte": "Dégagé. Nappes de brouillard se formant au cours de la nuit. Minimum zéro."
     },
     "normales": {
      "max": 7,
      "min": -1
     },
     "alertes": [],
-    "lever": "07:40",
-    "coucher": "18:22",
+    "lever": "07:41",
+    "coucher": "18:20",
     "emis": "05:00"
    },
    {
@@ -509,23 +503,23 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=48.43,-71.06",
     "actuel": {
-     "temp": 1.3,
+     "temp": 1.6,
      "conditions": null,
-     "humidite": 84,
-     "vent": "O 6 km/h (rafales 30)",
+     "humidite": 97,
+     "vent": "E calme km/h (rafales 30)",
      "station": "Jonquière"
     },
     "jour": {
      "nom": "Aujourd'hui",
-     "conditions": "Alternance de soleil et de nuages",
-     "icone": "https://weather.gc.ca/weathericons/02.gif",
-     "code": 2,
-     "max": 10,
+     "conditions": "Généralement ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/01.gif",
+     "code": 1,
+     "max": 16,
      "min": null,
      "pop": null,
-     "vent": "Vents devenant d'est à 20 km/h cet après-midi.",
-     "uv": "Indice UV de 2 ou bas.",
-     "texte": "Généralement nuageux. Dégagement cet après-midi. Vents devenant d'est à 20 km/h cet après-midi. Maximum 10. Indice UV de 2 ou bas."
+     "vent": "Vents devenant d'ouest à 20 km/h avec rafales à 40 en mi-journée.",
+     "uv": "Indice UV de 3 ou modéré.",
+     "texte": "Généralement ensoleillé. Vents devenant d'ouest à 20 km/h avec rafales à 40 en mi-journée. Maximum 16. Indice UV de 3 ou modéré."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
@@ -533,19 +527,19 @@
      "icone": "https://weather.gc.ca/weathericons/31.gif",
      "code": 31,
      "max": null,
-     "min": 2,
+     "min": 3,
      "pop": null,
-     "vent": "Vents d'est de 20 km/h devenant légers tard ce soir.",
+     "vent": "Vents d'ouest de 20 km/h.",
      "uv": null,
-     "texte": "Quelques nuages. Vents d'est de 20 km/h devenant légers tard ce soir. Minimum plus 2."
+     "texte": "Quelques nuages. Vents d'ouest de 20 km/h. Minimum plus 3."
     },
     "normales": {
      "max": 8,
      "min": 0
     },
     "alertes": [],
-    "lever": "07:08",
-    "coucher": "17:50",
+    "lever": "07:10",
+    "coucher": "17:48",
     "emis": "05:00"
    },
    {
@@ -554,23 +548,23 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=46.13,-70.36",
     "actuel": {
-     "temp": -1.3,
+     "temp": 0.2,
      "conditions": null,
-     "humidite": 82,
-     "vent": "ESE calme km/h (rafales 30)",
+     "humidite": 91,
+     "vent": "SO calme km/h (rafales 30)",
      "station": "Beauceville"
     },
     "jour": {
      "nom": "Aujourd'hui",
-     "conditions": "Alternance de soleil et de nuages",
-     "icone": "https://weather.gc.ca/weathericons/02.gif",
-     "code": 2,
-     "max": 11,
+     "conditions": "Ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/00.gif",
+     "code": 0,
+     "max": 16,
      "min": null,
      "pop": null,
-     "vent": "Vents jusqu'à 15 km/h.",
+     "vent": "Vents devenant du sud-ouest à 20 km/h ce matin.",
      "uv": "Indice UV de 3 ou modéré.",
-     "texte": "Alternance de soleil et de nuages. Dégagement cet après-midi. Vents jusqu'à 15 km/h. Maximum 11. Refroidissement éolien moins 9 ce matin. Indice UV de 3 ou modéré."
+     "texte": "Ensoleillé. Vents devenant du sud-ouest à 20 km/h ce matin. Maximum 16. Indice UV de 3 ou modéré."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
@@ -578,19 +572,19 @@
      "icone": "https://weather.gc.ca/weathericons/30.gif",
      "code": 30,
      "max": null,
-     "min": 2,
+     "min": 1,
      "pop": null,
      "vent": null,
      "uv": null,
-     "texte": "Dégagé. Minimum plus 2."
+     "texte": "Dégagé. Nappes de brouillard se formant au cours de la nuit. Minimum plus 1."
     },
     "normales": {
      "max": 10,
      "min": 1
     },
     "alertes": [],
-    "lever": "07:02",
-    "coucher": "17:50",
+    "lever": "07:04",
+    "coucher": "17:49",
     "emis": "05:00"
    },
    {
@@ -599,43 +593,43 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=50.21,-66.39",
     "actuel": {
-     "temp": -1.1,
-     "conditions": "Généralement dégagé",
-     "humidite": 68,
-     "vent": "OSO 17 km/h (rafales 41)",
+     "temp": 1.4,
+     "conditions": "Généralement nuageux",
+     "humidite": 93,
+     "vent": "ENE 8 km/h (rafales 29)",
      "station": "Aéroport de Sept-Îles"
     },
     "jour": {
      "nom": "Aujourd'hui",
-     "conditions": "Généralement ensoleillé",
-     "icone": "https://weather.gc.ca/weathericons/01.gif",
-     "code": 1,
-     "max": 5,
+     "conditions": "Alternance de soleil et de nuages",
+     "icone": "https://weather.gc.ca/weathericons/02.gif",
+     "code": 2,
+     "max": 10,
      "min": null,
      "pop": null,
-     "vent": "Vents du nord-ouest de 20 km/h avec rafales à 40 devenant du sud-ouest à 20 cet après-midi.",
+     "vent": "Vents devenant du sud-ouest à 20 km/h avec rafales à 40 ce matin.",
      "uv": "Indice UV de 2 ou bas.",
-     "texte": "Généralement ensoleillé. Vents du nord-ouest de 20 km/h avec rafales à 40 devenant du sud-ouest à 20 cet après-midi. Maximum plus 5. Refroidissement éolien moins 10 ce matin. Indice UV de 2 ou bas."
+     "texte": "Dégagement ce matin. Vents devenant du sud-ouest à 20 km/h avec rafales à 40 ce matin. Maximum 10. Indice UV de 2 ou bas."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
-     "conditions": "Ennuagement",
-     "icone": "https://weather.gc.ca/weathericons/34.gif",
-     "code": 34,
+     "conditions": "Partiellement nuageux",
+     "icone": "https://weather.gc.ca/weathericons/32.gif",
+     "code": 32,
      "max": null,
-     "min": -2,
+     "min": 2,
      "pop": null,
-     "vent": "Vents du sud de 20 km/h.",
+     "vent": null,
      "uv": null,
-     "texte": "Ennuagement ce soir. Vents du sud de 20 km/h. Minimum moins 2. Refroidissement éolien moins 8 ce soir."
+     "texte": "Partiellement nuageux. Minimum plus 2."
     },
     "normales": {
      "max": 6,
      "min": -2
     },
     "alertes": [],
-    "lever": "06:52",
-    "coucher": "17:28",
+    "lever": "06:54",
+    "coucher": "17:26",
     "emis": "05:00"
    },
    {
@@ -644,23 +638,23 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=45.4,-71.89",
     "actuel": {
-     "temp": -4.6,
+     "temp": -1.0,
      "conditions": "Dégagé",
-     "humidite": 95,
-     "vent": "ESE calme km/h (rafales 33)",
+     "humidite": 96,
+     "vent": "E 4 km/h (rafales 28)",
      "station": "Aéroport de Sherbrooke"
     },
     "jour": {
      "nom": "Aujourd'hui",
-     "conditions": "Généralement ensoleillé",
-     "icone": "https://weather.gc.ca/weathericons/01.gif",
-     "code": 1,
-     "max": 12,
+     "conditions": "Ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/00.gif",
+     "code": 0,
+     "max": 17,
      "min": null,
      "pop": null,
-     "vent": "Vents jusqu'à 15 km/h.",
+     "vent": "Vents devenant du sud-ouest à 20 km/h ce matin.",
      "uv": "Indice UV de 3 ou modéré.",
-     "texte": "Généralement ensoleillé. Vents jusqu'à 15 km/h. Maximum 12. Refroidissement éolien moins 9 ce matin. Indice UV de 3 ou modéré."
+     "texte": "Ensoleillé. Vents devenant du sud-ouest à 20 km/h ce matin. Maximum 17. Indice UV de 3 ou modéré."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
@@ -668,19 +662,19 @@
      "icone": "https://weather.gc.ca/weathericons/30.gif",
      "code": 30,
      "max": null,
-     "min": 2,
+     "min": 1,
      "pop": null,
      "vent": null,
      "uv": null,
-     "texte": "Dégagé. Minimum plus 2 avec risque de gel."
+     "texte": "Dégagé. Nappes de brouillard se formant au cours de la nuit. Minimum plus 1 avec risque de gel."
     },
     "normales": {
      "max": 9,
      "min": 1
     },
     "alertes": [],
-    "lever": "07:07",
-    "coucher": "17:57",
+    "lever": "07:09",
+    "coucher": "17:56",
     "emis": "05:00"
    },
    {
@@ -689,43 +683,43 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=46.34,-72.54",
     "actuel": {
-     "temp": 1.5,
-     "conditions": "Nuageux",
-     "humidite": 87,
-     "vent": "SSO 9 km/h (rafales 33)",
+     "temp": 3.9,
+     "conditions": "Dégagé",
+     "humidite": 94,
+     "vent": "S 11 km/h (rafales 33)",
      "station": "Aéroport de Trois-Rivières"
     },
     "jour": {
      "nom": "Aujourd'hui",
-     "conditions": "Alternance de soleil et de nuages",
-     "icone": "https://weather.gc.ca/weathericons/02.gif",
-     "code": 2,
-     "max": 11,
+     "conditions": "Ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/00.gif",
+     "code": 0,
+     "max": 15,
      "min": null,
      "pop": null,
-     "vent": "Vents devenant du sud-ouest à 20 km/h en mi-journée.",
+     "vent": "Vents du sud-ouest de 20 km/h.",
      "uv": "Indice UV de 3 ou modéré.",
-     "texte": "Alternance de soleil et de nuages. Vents devenant du sud-ouest à 20 km/h en mi-journée. Maximum 11. Indice UV de 3 ou modéré."
+     "texte": "Ensoleillé. Vents du sud-ouest de 20 km/h. Maximum 15. Indice UV de 3 ou modéré."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
-     "conditions": "Quelques nuages",
-     "icone": "https://weather.gc.ca/weathericons/31.gif",
-     "code": 31,
+     "conditions": "Dégagé",
+     "icone": "https://weather.gc.ca/weathericons/30.gif",
+     "code": 30,
      "max": null,
-     "min": 8,
+     "min": 4,
      "pop": null,
-     "vent": "Vents du sud-ouest de 20 km/h.",
+     "vent": null,
      "uv": null,
-     "texte": "Quelques nuages. Vents du sud-ouest de 20 km/h. Minimum 8."
+     "texte": "Dégagé. Nappes de brouillard se formant au cours de la nuit. Minimum plus 4."
     },
     "normales": {
      "max": 10,
      "min": 1
     },
     "alertes": [],
-    "lever": "07:11",
-    "coucher": "17:59",
+    "lever": "07:13",
+    "coucher": "17:57",
     "emis": "05:00"
    },
    {
@@ -734,23 +728,23 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=46.06,-71.96",
     "actuel": {
-     "temp": 0.0,
+     "temp": 5.8,
      "conditions": null,
-     "humidite": 80,
-     "vent": "SSO 11 km/h (rafales 30)",
+     "humidite": 70,
+     "vent": "S 12 km/h (rafales 28)",
      "station": "Lemieux"
     },
     "jour": {
      "nom": "Aujourd'hui",
-     "conditions": "Alternance de soleil et de nuages",
-     "icone": "https://weather.gc.ca/weathericons/02.gif",
-     "code": 2,
-     "max": 13,
+     "conditions": "Ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/00.gif",
+     "code": 0,
+     "max": 17,
      "min": null,
      "pop": null,
-     "vent": "Vents devenant du sud-ouest à 20 km/h en mi-journée.",
+     "vent": "Vents devenant du sud-ouest à 20 km/h ce matin.",
      "uv": "Indice UV de 3 ou modéré.",
-     "texte": "Alternance de soleil et de nuages. Dégagement cet après-midi. Vents devenant du sud-ouest à 20 km/h en mi-journée. Maximum 13. Refroidissement éolien moins 7 ce matin. Indice UV de 3 ou modéré."
+     "texte": "Ensoleillé. Vents devenant du sud-ouest à 20 km/h ce matin. Maximum 17. Indice UV de 3 ou modéré."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
@@ -758,19 +752,19 @@
      "icone": "https://weather.gc.ca/weathericons/30.gif",
      "code": 30,
      "max": null,
-     "min": 7,
+     "min": 5,
      "pop": null,
-     "vent": "Vents du sud-ouest de 20 km/h.",
+     "vent": null,
      "uv": null,
-     "texte": "Dégagé. Vents du sud-ouest de 20 km/h. Minimum 7."
+     "texte": "Dégagé. Nappes de brouillard se formant au cours de la nuit. Minimum plus 5."
     },
     "normales": {
-     "max": 11,
+     "max": 10,
      "min": 2
     },
     "alertes": [],
-    "lever": "07:08",
-    "coucher": "17:57",
+    "lever": "07:10",
+    "coucher": "17:55",
     "emis": "05:00"
    },
    {
@@ -779,23 +773,23 @@
     "ok": true,
     "lien": "https://meteo.gc.ca/fr/location/index.html?coords=48.1,-77.79",
     "actuel": {
-     "temp": -0.7,
+     "temp": 8.5,
      "conditions": "Dégagé",
-     "humidite": 98,
-     "vent": "S 9 km/h (rafales 30)",
+     "humidite": 71,
+     "vent": "SO 14 km/h (rafales 29)",
      "station": "Aéroport régional de Val-d'Or"
     },
     "jour": {
      "nom": "Aujourd'hui",
-     "conditions": "Ensoleillé",
-     "icone": "https://weather.gc.ca/weathericons/00.gif",
-     "code": 0,
-     "max": 14,
+     "conditions": "Généralement ensoleillé",
+     "icone": "https://weather.gc.ca/weathericons/01.gif",
+     "code": 1,
+     "max": 16,
      "min": null,
      "pop": null,
-     "vent": "Vents devenant du sud-ouest à 30 km/h avec rafales à 50 ce matin.",
+     "vent": "Vents du sud-ouest de 20 km/h avec rafales à 40.",
      "uv": "Indice UV de 3 ou modéré.",
-     "texte": "Ensoleillé. Vents devenant du sud-ouest à 30 km/h avec rafales à 50 ce matin. Maximum 14. Indice UV de 3 ou modéré."
+     "texte": "Généralement ensoleillé. Vents du sud-ouest de 20 km/h avec rafales à 40. Maximum 16. Indice UV de 3 ou modéré."
     },
     "nuit": {
      "nom": "Ce soir et cette nuit",
@@ -803,19 +797,19 @@
      "icone": "https://weather.gc.ca/weathericons/30.gif",
      "code": 30,
      "max": null,
-     "min": 7,
+     "min": 0,
      "pop": null,
-     "vent": "Vents du sud-ouest de 30 km/h avec rafales à 50.",
+     "vent": null,
      "uv": null,
-     "texte": "Dégagé. Vents du sud-ouest de 30 km/h avec rafales à 50. Minimum 7."
+     "texte": "Dégagé. Nappes de brouillard se formant au cours de la nuit. Minimum zéro."
     },
     "normales": {
      "max": 7,
      "min": -1
     },
     "alertes": [],
-    "lever": "07:35",
-    "coucher": "18:17",
+    "lever": "07:36",
+    "coucher": "18:15",
     "emis": "05:00"
    }
   ]
