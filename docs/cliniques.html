@@ -64,7 +64,7 @@ footer { color:var(--muet); font-size:.8rem; margin-top:28px; }
       <button class="bouton" id="telecharger" type="button">⬇ Télécharger le PDF</button>
     </div>
     <div class="cadre"><table>
-      <thead><tr><th>Clinique</th><th>Secteur météo</th><th>Jour</th><th>Nuit</th><th style="text-align:center">Transmed</th><th style="text-align:center">24 h</th></tr></thead>
+      <thead><tr><th>Secteur météo</th><th>Cliniques</th><th>Jour</th><th>Nuit</th><th style="text-align:center">Transmed</th><th style="text-align:center">24 h</th></tr></thead>
       <tbody id="lignes"></tbody>
     </table></div>
   </div>
@@ -356,19 +356,27 @@ async function traiter(fichier) {
   if (lignes.some(l => l.secteur && l.jour == null))
     message("La météo a été mise à jour après la fin de la journée : la température de jour n'est plus disponible.", "attention");
 
-  RAPPORT = { lignes, genere: g, total: lu.cliniques.length };
+  // Un secteur par ligne : les cliniques d'un même secteur sont regroupées
+  const parSecteur = new Map();
+  for (const l of lignes) {
+    const cle = l.secteur || "?" + l.nom;
+    if (!parSecteur.has(cle)) parSecteur.set(cle, { ...l, nom: l.secteur || l.nom, cliniques: [] });
+    parSecteur.get(cle).cliniques.push(l.nom);
+  }
+  const secteurs = [...parSecteur.values()].sort((a, b) => a.nom.localeCompare(b.nom, "fr"));
+  RAPPORT = { lignes: secteurs, nbCliniques: lignes.length, genere: g, total: lu.cliniques.length };
   afficher();
 }
 
 function afficher() {
   const tb = document.getElementById("lignes"); tb.innerHTML = "";
+  const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
+  const img = (code, n) => { const u = icone(code, n); return u ? `<img src="${u}" alt="">` : ""; };
   for (const l of RAPPORT.lignes) {
     const tr = document.createElement("tr");
     const cell = (html, cls) => { const td = document.createElement("td"); if (cls) td.className = cls; td.innerHTML = html; tr.appendChild(td); };
-    const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
-    const img = (code, n) => { const u = icone(code, n); return u ? `<img src="${u}" alt="">` : ""; };
-    cell(`<strong>${esc(l.nom)}</strong>`);
-    cell(l.secteur ? esc(l.secteur) : `<span class="inconnu">Inconnu</span>`, "muet");
+    cell(l.secteur ? `<strong>${esc(l.nom)}</strong>` : `<strong>${esc(l.nom)}</strong> <span class="inconnu">secteur inconnu</span>`);
+    cell(esc(l.cliniques.join(", ")), "muet");
     cell(l.secteur ? img(l.codeJour, false) + deg(l.jour) : "—", "t");
     cell(l.secteur ? img(l.codeNuit, true) + deg(l.nuit) : "—", "t");
     cell(l.transmed || "—", "mode " + (l.transmed || ""));
@@ -376,18 +384,18 @@ function afficher() {
     tb.appendChild(tr);
   }
   document.getElementById("resume").innerHTML =
-    `<strong>${RAPPORT.lignes.length} cliniques partent aujourd'hui</strong> <span class="muet">(sur ${RAPPORT.total} dans le fichier)</span>`;
+    `<strong>${RAPPORT.lignes.length} secteurs pour ${RAPPORT.nbCliniques} cliniques qui partent aujourd'hui</strong> <span class="muet">(sur ${RAPPORT.total} cliniques dans le fichier)</span>`;
   document.getElementById("resultat").hidden = false;
 }
 
 // ---------------------------------------------------------------------------
-// PDF du rapport (même style que le rapport du matin)
+// PDF du rapport : un secteur par ligne (même style que le rapport du matin)
 // ---------------------------------------------------------------------------
 function creerPdf() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ unit: "pt", format: "letter" });
   const W = 612, H = 792, marge = 24;
-  const cols = [170, 120, 30, 50, 30, 50, 57, 57];   // Clinique, Secteur, icône, jour, icône, nuit, Transmed, 24 h
+  const cols = [230, 34, 60, 34, 60, 73, 73];   // Secteur, icône, jour, icône, nuit, Transmed, 24 h
   const larg = cols.reduce((a, b) => a + b, 0), x0 = (W - larg) / 2;
   const xs = cols.reduce((acc, w, i) => (acc.push(i ? acc[i - 1] + cols[i - 1] : x0), acc), []);
   const n = RAPPORT.lignes.length;
@@ -397,8 +405,8 @@ function creerPdf() {
   let hLigne = Math.min(40, dispo / n);
   const unePage = hLigne >= 13;
   if (!unePage) hLigne = 22;
-  const police = Math.max(8, Math.min(13, hLigne * 0.68));
-  const tailleIcone = Math.min(28, hLigne - 2);
+  const police = Math.max(8, Math.min(14, hLigne * 0.68));
+  const tailleIcone = Math.min(30, hLigne - 2);
   const NOIR = 0, TRAIT = 60;   // traits foncés, lisibles en noir et blanc
   const g = RAPPORT.genere;
   const heure = `${String(g.getHours()).padStart(2, "0")}:${String(g.getMinutes()).padStart(2, "0")}`;
@@ -406,34 +414,35 @@ function creerPdf() {
   const entetes = (y) => {
     doc.setFillColor(31, 78, 121); doc.rect(x0, y, larg, hBandeau, "F");
     doc.setTextColor(255); doc.setFont("helvetica", "bold"); doc.setFontSize(13);
-    doc.text("Cliniques qui partent aujourd'hui", x0 + larg / 2, y + 16.5, { align: "center" });
+    doc.text(`${n} secteurs`, x0 + larg / 2, y + 16.5, { align: "center" });
     y += hBandeau;
     doc.setFillColor(225, 225, 225); doc.rect(x0, y, larg, hEntete, "F");
     doc.setTextColor(NOIR); doc.setFontSize(10.5);
     const b = y + 15;
-    doc.text("Clinique", xs[0] + 6, b); doc.text("Secteur météo", xs[1] + 6, b);
-    doc.text("Jour", xs[2] + (cols[2] + cols[3]) / 2, b, { align: "center" });
-    doc.text("Nuit", xs[4] + (cols[4] + cols[5]) / 2, b, { align: "center" });
-    doc.text("Transmed", xs[6] + cols[6] / 2, b, { align: "center" });
-    doc.text("24 h", xs[7] + cols[7] / 2, b, { align: "center" });
-    doc.setDrawColor(TRAIT); doc.setLineWidth(0.9); doc.line(x0, y + hEntete, x0 + larg, y + hEntete);
+    doc.text("Secteur météo", xs[0] + 6, b);
+    doc.text("Jour", xs[1] + (cols[1] + cols[2]) / 2, b, { align: "center" });
+    doc.text("Nuit", xs[3] + (cols[3] + cols[4]) / 2, b, { align: "center" });
+    doc.text("Transmed", xs[5] + cols[5] / 2, b, { align: "center" });
+    doc.text("24 h", xs[6] + cols[6] / 2, b, { align: "center" });
+    separations.push(y + hEntete);
     return y + hEntete;
   };
-  const separations = [];   // traits entre les cliniques, tracés à la fin pour rester par-dessus les couleurs
+  const separations = [];   // traits entre les lignes, tracés à la fin pour rester par-dessus les couleurs
   const cadre = (debut, fin) => {
     doc.setDrawColor(TRAIT); doc.setLineWidth(0.7);
     for (const ys of separations) doc.line(x0, ys, x0 + larg, ys);
     separations.length = 0;
     doc.setLineWidth(0.8);
-    for (const c of [1, 2, 4, 6, 7]) doc.line(xs[c], debut + hBandeau, xs[c], fin);
+    for (const c of [1, 3, 5, 6]) doc.line(xs[c], debut + hBandeau, xs[c], fin);
     doc.setDrawColor(NOIR); doc.setLineWidth(1.4); doc.rect(x0, debut, larg, fin - debut);
   };
 
   let y = marge;
   doc.setTextColor(31, 78, 121); doc.setFont("helvetica", "bold"); doc.setFontSize(20);
-  doc.text(`Cliniques du ${dateLongue(g)}`, W / 2, y + 20, { align: "center" });
+  doc.text(`Secteurs du ${dateLongue(g)}`, W / 2, y + 20, { align: "center" });
   doc.setFont("helvetica", "normal"); doc.setFontSize(9); doc.setTextColor(70);
-  doc.text(`Maximum le jour, minimum la nuit · Météo de ${heure} · Source : meteo.gc.ca`, W / 2, y + 36, { align: "center" });
+  doc.text(`Secteurs des cliniques qui partent aujourd'hui · Maximum le jour, minimum la nuit · Météo de ${heure} · Source : meteo.gc.ca`,
+           W / 2, y + 36, { align: "center" });
   y += hautTitre;
   let debutTableau = y;
   y = entetes(y);
@@ -445,18 +454,16 @@ function creerPdf() {
     }
     if (i % 2) { doc.setFillColor(242, 242, 242); doc.rect(x0, y, larg, hLigne, "F"); }
     const milieu = y + hLigne / 2 + police * 0.35;
-    doc.setTextColor(NOIR); doc.setFont("helvetica", "bold"); doc.setFontSize(police);
-    doc.text(doc.splitTextToSize(l.nom, cols[0] - 10)[0], xs[0] + 6, milieu);
-    doc.setFont("helvetica", "normal");
-    if (l.secteur) doc.setTextColor(40); else doc.setTextColor(176, 0, 32);
-    doc.text(doc.splitTextToSize(l.secteur || "Inconnu", cols[1] - 10)[0], xs[1] + 6, milieu);
-    for (const [col, code, nuit, val] of [[2, l.codeJour, false, l.jour], [4, l.codeNuit, true, l.nuit]]) {
+    doc.setFont("helvetica", "bold"); doc.setFontSize(police);
+    if (l.secteur) doc.setTextColor(NOIR); else doc.setTextColor(176, 0, 32);
+    doc.text(doc.splitTextToSize(l.secteur ? l.nom : l.nom + " (secteur inconnu)", cols[0] - 10)[0], xs[0] + 6, milieu);
+    for (const [col, code, nuit, val] of [[1, l.codeJour, false, l.jour], [3, l.codeNuit, true, l.nuit]]) {
       const u = l.secteur ? icone(code, nuit) : null;
       if (u) doc.addImage(u, "PNG", xs[col] + (cols[col] - tailleIcone) / 2, y + (hLigne - tailleIcone) / 2, tailleIcone, tailleIcone);
       doc.setFont("helvetica", "bold"); doc.setTextColor(NOIR); doc.setFontSize(police + 1.5);
       doc.text(l.secteur ? deg(val) : "—", xs[col + 1] + cols[col + 1] / 2, milieu, { align: "center" });
     }
-    for (const [col, mode] of [[6, l.transmed], [7, l.h24]]) {
+    for (const [col, mode] of [[5, l.transmed], [6, l.h24]]) {
       if (mode) {
         doc.setFillColor(COULEURS[mode][0]); doc.rect(xs[col], y, cols[col], hLigne, "F");
         doc.setTextColor(NOIR);   // texte noir : bien lisible en noir et blanc
@@ -474,7 +481,7 @@ function creerPdf() {
   doc.text("24 h : Hiver si la nuit est à -10 °C ou moins ou si le jour est sous -5 °C ; sinon Hybride si le jour ou la nuit est à 0 °C ou moins ; sinon Été.",
            W / 2, y + 25, { align: "center" });
   const d = RAPPORT.genere;
-  doc.save(`cliniques-${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}.pdf`);
+  doc.save(`secteurs-${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}.pdf`);
 }
 
 // ---------------------------------------------------------------------------
