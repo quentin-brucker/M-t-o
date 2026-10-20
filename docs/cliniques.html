@@ -348,7 +348,7 @@ async function traiter(fichier) {
     }
     const m = id ? METEO.secteurs[id] : null;
     const jour = m ? m[0] : null, nuit = m ? m[2] : null;
-    return { nom: nomAffiche, secteur: secteur || null, jour, codeJour: m ? m[1] : null, nuit, codeNuit: m ? m[3] : null,
+    return { nom: nomAffiche.replace(/^(inn\.?|innomar)\s+/i, ""), secteur: secteur || null, jour, codeJour: m ? m[1] : null, nuit, codeNuit: m ? m[3] : null,
              transmed: m ? emballageTransmed(jour) : null, h24: m ? emballage24h(jour, nuit) : null };
   });
   const inconnus = lignes.filter(l => !l.secteur);
