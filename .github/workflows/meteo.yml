@@ -53,5 +53,9 @@ jobs:
             echo "Aucun changement."
           else
             git commit -m "Météo du $(TZ=America/Toronto date +%Y-%m-%d)"
-            git push
+            # Si un autre changement est arrivé pendant le calcul, on le récupère avant de publier.
+            for essai in 1 2 3; do
+              git pull --rebase && git push && break
+              sleep 5
+            done
           fi
