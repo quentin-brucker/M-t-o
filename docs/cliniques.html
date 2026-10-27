@@ -43,6 +43,12 @@ td.mode { text-align:center; font-weight:700; }
 .inconnu { color:#b00020; font-weight:600; }
 .muet { color:var(--muet); font-size:.85rem; }
 footer { color:var(--muet); font-size:.8rem; margin-top:28px; }
+.bouton.clair { background:#fff; color:#1f4e79; margin-top:14px; }
+.bouton.clair:hover { background:#e8f0f8; }
+.bouton:disabled { opacity:.6; cursor:wait; }
+.etat { margin-top:12px; padding:10px 14px; border-radius:10px; background:#fff7df; color:#6b4f00; font-weight:600; }
+.etat.ok { background:#e6f4e8; color:#1d6331; }
+.etat.erreur { background:#fdecec; color:#7d1c1c; }
 </style>
 </head>
 <body>
@@ -50,6 +56,8 @@ footer { color:var(--muet); font-size:.8rem; margin-top:28px; }
   <a class="nav" href="index.html">← Météo des villes</a>
   <h1>Cliniques du jour</h1>
   <p id="soustitre">Chargement de la météo du matin…</p>
+  <button class="bouton clair" id="actualiser" type="button">🔄 Actualiser la météo</button>
+  <div id="etatMeteo" class="etat" hidden></div>
 </div></div>
 <main>
   <label id="zone" for="fichier">
@@ -256,10 +264,76 @@ const pret = fetch("secteurs.json?" + Date.now()).then(r => r.json()).then(d => 
   const g = new Date(d.genere);
   document.getElementById("soustitre").textContent =
     `Météo du ${dateLongue(g)}, mise à jour à ${String(g.getHours()).padStart(2, "0")} h ${String(g.getMinutes()).padStart(2, "0")}`;
+  const now = new Date();
+  if (!memeJour(g, now) && now.getHours() >= 5)
+    etatMeteo(`La météo du robot date du ${dateLongue(g)}. Clique sur « Actualiser la météo » pour avoir celle d'aujourd'hui.`);
 }).catch(() => {
   document.getElementById("soustitre").textContent = "Météo du matin introuvable";
   message("La météo du matin n'est pas encore disponible. Elle sera prête après le prochain passage du robot (5 h 30).", "erreur");
 });
+
+// ---------------------------------------------------------------------------
+// Bouton « Actualiser la météo » : la page va chercher la météo d'Environnement
+// Canada tout de suite, dans le navigateur, pour les secteurs des cliniques.
+// ---------------------------------------------------------------------------
+const memeJour = (a, b) => a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+function etatMeteo(txt, type = "") {
+  const e = document.getElementById("etatMeteo"); e.textContent = txt; e.className = "etat " + type; e.hidden = !txt;
+}
+function frEc(obj, ...chemin) {
+  for (const c of chemin) { if (!obj || typeof obj !== "object") return null; obj = obj[c]; }
+  if (obj && typeof obj === "object" && ("fr" in obj || "en" in obj)) return obj.fr ?? obj.en;
+  return obj ?? null;
+}
+function tempEc(periode, classe) {
+  for (const t of (frEc(periode, "temperatures") || {}).temperature || []) if (frEc(t, "class") === classe) return frEc(t, "value");
+  return null;
+}
+async function meteoSecteur(id) {
+  for (let essai = 0; essai < 3; essai++) {
+    try {
+      const r = await fetch(`https://api.weather.gc.ca/collections/citypageweather-realtime/items/${id}?f=json&lang=fr`, { cache: "no-store" });
+      if (!r.ok) throw new Error(r.status);
+      const p = (await r.json()).properties || {}, prev = (p.forecastGroup || {}).forecasts || [];
+      let jour = null, nuit = null;   // comme le robot : « Aujourd'hui » (max), puis « Ce soir et cette nuit » (min)
+      if (prev.length) { if (tempEc(prev[0], "high") != null) { jour = prev[0]; nuit = prev[1] || null; } else nuit = prev[0]; }
+      const code = per => per ? frEc(per, "abbreviatedForecast", "icon", "value") : null;
+      return [jour ? tempEc(jour, "high") : null, code(jour), nuit ? tempEc(nuit, "low") : null, code(nuit), frEc(p, "name") || id];
+    } catch (e) { if (essai === 2) return null; await new Promise(res => setTimeout(res, 1500 * (essai + 1))); }
+  }
+}
+let dernierFichier = null;
+async function actualiserMeteo() {
+  const bouton = document.getElementById("actualiser");
+  await pret;
+  if (!METEO) METEO = { genere: null, secteurs: {} };
+  const ids = new Set(Object.values(CORRESPONDANCE).map(v => v[0]));
+  if (RAPPORT) RAPPORT.lignes.forEach(l => l.id && ids.add(l.id));
+  bouton.disabled = true; bouton.textContent = "⏳ Recherche de la météo…"; etatMeteo("");
+  try {
+    const liste = [...ids], resultats = {};
+    for (let i = 0; i < liste.length; i += 8)   // 8 secteurs à la fois
+      await Promise.all(liste.slice(i, i + 8).map(async id => { resultats[id] = await meteoSecteur(id); }));
+    const recus = Object.entries(resultats).filter(([, v]) => v);
+    if (!recus.length) throw new Error("Environnement Canada ne répond pas pour l'instant. Réessaie dans quelques minutes.");
+    const quand = new Date();
+    if (!recus.some(([, v]) => v[0] != null) && METEO.genere && memeJour(new Date(METEO.genere), quand)) {
+      etatMeteo("À cette heure-ci, Environnement Canada ne donne plus la température de jour : la météo du matin est gardée.");
+      return;
+    }
+    for (const [id, v] of recus) METEO.secteurs[id] = v;
+    METEO.genere = quand.toISOString();
+    const h = `${String(quand.getHours()).padStart(2, "0")} h ${String(quand.getMinutes()).padStart(2, "0")}`;
+    document.getElementById("soustitre").textContent = `Météo du ${dateLongue(quand)}, actualisée à ${h}`;
+    const manque = liste.length - recus.length;
+    etatMeteo(`Météo actualisée à ${h}` + (manque ? ` (${manque} secteur${manque > 1 ? "s" : ""} sans réponse, météo du robot gardée pour ceux-là).` : "."), manque ? "" : "ok");
+    if (dernierFichier) await traiter(dernierFichier);
+  } catch (e) {
+    etatMeteo(e.message || "La météo n'a pas pu être actualisée.", "erreur");
+  } finally {
+    bouton.disabled = false; bouton.textContent = "🔄 Actualiser la météo";
+  }
+}
 
 function message(txt, type = "") {
   const d = document.createElement("div"); d.className = "message " + type; d.textContent = txt;
@@ -324,6 +398,7 @@ async function traiter(fichier) {
   document.getElementById("messages").innerHTML = "";
   document.getElementById("resultat").hidden = true;
   if (!fichier || !/\.pdf$/i.test(fichier.name)) { message("Choisis un fichier PDF.", "erreur"); return; }
+  dernierFichier = fichier;
   await pret;
   if (!METEO) return;
   let lu;
@@ -348,7 +423,7 @@ async function traiter(fichier) {
     }
     const m = id ? METEO.secteurs[id] : null;
     const jour = m ? m[0] : null, nuit = m ? m[2] : null;
-    return { nom: nomAffiche.replace(/^(inn\.?|innomar)\s+/i, ""), secteur: secteur || null, jour, codeJour: m ? m[1] : null, nuit, codeNuit: m ? m[3] : null,
+    return { id: id || null, nom: nomAffiche.replace(/^(inn\.?|innomar)\s+/i, ""), secteur: secteur || null, jour, codeJour: m ? m[1] : null, nuit, codeNuit: m ? m[3] : null,
              transmed: m ? emballageTransmed(jour) : null, h24: m ? emballage24h(jour, nuit) : null };
   });
   const inconnus = lignes.filter(l => !l.secteur);
@@ -491,6 +566,7 @@ champ.addEventListener("change", () => traiter(champ.files[0]));
 ["dragleave", "drop"].forEach(ev => zone.addEventListener(ev, e => { e.preventDefault(); zone.classList.remove("survol"); }));
 zone.addEventListener("drop", e => traiter(e.dataTransfer.files[0]));
 document.getElementById("telecharger").addEventListener("click", creerPdf);
+document.getElementById("actualiser").addEventListener("click", actualiserMeteo);
 </script>
 </body>
 </html>
